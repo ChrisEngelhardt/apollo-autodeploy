@@ -9,7 +9,7 @@
 
 FROM docker.mirror.hashicorp.services/golang:alpine
 
-RUN apk add --no-cache git bash openssh zip python3
+RUN apk add --no-cache git bash openssh zip python3 dialog
 
 ENV TF_DEV=true
 ENV TF_RELEASE=1
