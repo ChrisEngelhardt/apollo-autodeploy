@@ -1,3 +1,9 @@
+Apollo Autodeploy
+=========
+
+Docker container to automatically deploy cloud functions for usage with the [Apollo Engine](https://github.com/Apollo-Core).
+
+
 Terraform
 =========
 
