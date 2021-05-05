@@ -8,9 +8,8 @@
 # built by the (closed-source) official release process.
 
 FROM docker.mirror.hashicorp.services/golang:alpine
-LABEL maintainer="HashiCorp Terraform Team <terraform@hashicorp.com>"
 
-RUN apk add --no-cache git bash openssh
+RUN apk add --no-cache git bash openssh zip python3
 
 ENV TF_DEV=true
 ENV TF_RELEASE=1
@@ -19,5 +18,5 @@ WORKDIR $GOPATH/src/github.com/hashicorp/terraform
 COPY . .
 RUN /bin/bash ./scripts/build.sh
 
-WORKDIR $GOPATH
-ENTRYPOINT ["terraform"]
+WORKDIR /app
+ENTRYPOINT ["/bin/bash","/app/deploy.sh"]
